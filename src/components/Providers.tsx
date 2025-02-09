@@ -5,32 +5,36 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
+import { createWalletClient, createPublicClient } from "viem";
+import { http } from "wagmi";
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
-import {
-  mainnet,
-  optimism,
-  arbitrum,
-  sepolia,
-  optimismSepolia,
-  arbitrumSepolia,
-} from "wagmi/chains";
+import { arbitrumSepolia } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 
 const config = getDefaultConfig({
-  appName: "Some App",
+  appName: "AI-Contest Riddle dapp",
   projectId: process.env.NEXT_PUBLIC_PROJECT_ID || "",
-  chains: [
-    mainnet,
-    optimism,
-    arbitrum,
-    sepolia,
-    optimismSepolia,
-    arbitrumSepolia,
-  ],
-  ssr: true, // If your dApp uses server side rendering (SSR)
+  chains: [arbitrumSepolia],
+  transports: {
+    [arbitrumSepolia.id]: http(
+      "https://arb-sepolia.g.alchemy.com/v2/XxWU7n2c8z5Wtte1dxeOkplsldBXm2vO"
+    ),
+  },
+  ssr: true,
+});
+
+export const walletClient = createWalletClient({
+  chain: arbitrumSepolia,
+  transport: http(),
+});
+export const publicClient = createPublicClient({
+  chain: arbitrumSepolia,
+  transport: http(
+    "https://arb-sepolia.g.alchemy.com/v2/XxWU7n2c8z5Wtte1dxeOkplsldBXm2vO"
+  ),
 });
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {

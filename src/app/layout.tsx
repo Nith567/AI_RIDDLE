@@ -7,8 +7,9 @@ import "@rainbow-me/rainbowkit/styles.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Some App",
-  description: "This app does something",
+  title: "AI-RIDDLE-CONTEST ON ARBITRUM",
+  description:
+    "Contest AI-Riddle-Quest from an AI model, participate and win Big on Arbitrum Chain",
   icons: ["/logo/logo-dark.png"],
 };
 
