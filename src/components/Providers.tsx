@@ -16,7 +16,7 @@ const queryClient = new QueryClient();
 
 const config = getDefaultConfig({
   appName: "AI-Contest Riddle dapp",
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID || "",
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID || "3edba4009c97c98400b0c8df8ca3d590",
   chains: [arbitrumSepolia],
   transports: {
     [arbitrumSepolia.id]: http(
