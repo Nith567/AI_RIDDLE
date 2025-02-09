@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI-Riddle-Quest on Arbitrum Sepolia
 
-## Getting Started
+AI-RIDDLE-QUEST is a decentralized application (dApp) that leverages the power of an OnChain AI(Llama3 8B) to create logic-based riddles and competitions. Participants can solve riddles, submit their answers, and win prizes if their answers meet the required score criteria. The smart contract handles validation and prize distribution, ensuring transparency and fairness.
 
-First, run the development server:
+> Ref Idea : https://x.com/jarrodWattsDev/status/1862299845710757980
+- **Future Scope/ Grant**: Make an AI agent where to connect AI with AI-Riddle-Quest everyone can participate from different contests and who guesses first wins the prize.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **Oracle Integration**: The Ora-AI oracle generates riddles and evaluates answers by AI model.
+- **Decentralized Scoring**: Scores are calculated on-chain, ensuring trust and transparency handled by AI(Llama3 8B model).
+- **Prize Claiming**: Participants can claim prizes if their answer scores exceed the required deployed score intially.
+- **Secure Smart Contracts**: Logic for competitions and prize distribution is handled by robust smart contracts on ArbitrumSepolia blockchain.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How It Works
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Enter Competition**:
+   - Users join a competition by providing a theme, entry cost, and desired minimum score to win.
+   - The competition details are stored on-chain.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Solve the Riddle**:
+   - Participants submit their answers to the riddle via the dApp.
+   - The Ora-AI oracle processes the answers and returns a score.
 
-## Learn More
+3. **Claim Prize**:
+   - If the score is greater than or equal to the required score, the participant can claim the prize on Arbitrum Sepolia blockchain.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![alt text](<./public/excailMap.png>)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+>Sample Riddle - speak without a mouth and hear without ears. I have no body, but I come **alive with wind. What am I? (Echo)**
