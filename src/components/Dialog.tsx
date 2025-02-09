@@ -49,7 +49,7 @@ export function CompetitionEntryDialog() {
         theme,
         entryCost,
         scoreToWin,
-        contractAddress: "0x2342342",
+        contractAddress: String(scoreToWin),
       };
       const response = await axios.post("/api/contest", contestData);
       console.log("data", response.data);
