@@ -34,13 +34,13 @@ export function CompetitionEntryDialog() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      // const res = await deployContract(
-      //   account.address,
-      //   theme,
-      //   entryCost,
-      //   scoreToWin
-      // );
-      // console.log("nowdeployed ", res);
+       const res = await deployContract(
+        account.address,
+        theme,
+         entryCost,
+         scoreToWin
+       );
+      console.log("nowdeployed ", res);
       toast({
         title: "successfully Deployed",
         description: "You have successfully deployed contract.",
@@ -49,7 +49,7 @@ export function CompetitionEntryDialog() {
         theme,
         entryCost,
         scoreToWin,
-        contractAddress: String(scoreToWin),
+        contractAddress: res,
       };
       const response = await axios.post("/api/contest", contestData);
       console.log("data", response.data);
